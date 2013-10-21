@@ -1,0 +1,31 @@
+package com.example.P0131_MenuSimple;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+public class MyActivity extends Activity {
+    /**
+     * Called when the activity is first created.
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("menu1");
+        menu.add("menu2");
+        menu.add("menu3");
+        menu.add("menu4");
+        return  super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+        return super.onOptionsItemSelected(item);
+    }
+}
